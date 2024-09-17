@@ -1,15 +1,8 @@
 
 /**
-* An extension to clear blocks in a flat space
-* using 2 points (point A and point B)
+* An extension that clear blocks in a specified flat area
+* using 2 positions (point A and point B)
 */
-
-enum MyEnum {
-    //% block="one"
-    One,
-    //% block="two"
-    Two
-}
 
 /**
  * Clear blocks
@@ -26,7 +19,6 @@ namespace Clear {
             if (!pos_b_done && pos_a_done) {
                 pos_b = pos(0, 0, 0)
                 pos_b_done = true
-                // player.say("Position B: " + pos_b)
                 return
             }
 
@@ -42,7 +34,6 @@ namespace Clear {
     function WaitClear(): void {
         loops.forever(function on_forever() {
             if (pos_a_done) {
-                // player.say("Waiting...")
                 gameplay.title(mobs.target(NEAREST_PLAYER), "Waiting to set Position B", "")
                 builder.teleportTo(pos_a)
                 builder.mark()
@@ -62,12 +53,6 @@ namespace Clear {
             return
         })
     }
-
-    /**
-     * Waits and clears the selected area
-     */
-    //% block = "clear blocks within the set A and B positions"
-    //% block.shadow=minecraftBlock
 
     let pos_b_done = false
     let pos_a_done = false
