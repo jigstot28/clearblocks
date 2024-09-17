@@ -1,6 +1,6 @@
 
 /**
-* An extension that clear blocks in a specified flat area
+* An extension that clears blocks in a selected flat area
 * using 2 positions (point A and point B)
 */
 
